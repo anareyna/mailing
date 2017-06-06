@@ -16,5 +16,3 @@ Tasks avalaibles:
 
 $ gulp email
 $ gulp watch
-
-### Profit!
