@@ -1,19 +1,13 @@
-# Basic Email Creator
-
-**Pug > Mjml > Html email creator**
-
-Easy workflow to made modern responsive email with [Gulp](https://github.com/gulpjs/gulp "Gulp"), [Pug](https://github.com/pugjs/pug "Pug"), and [Mjml](https://github.com/mjmlio/mjml "Mjml") technologies
-
 $ npm install
 
-$ cd source/views/
+$ cd src/views/
 
 $ gulp
 
 launch  http://localhost:3000
 
-Source Pug files:
-source/views/
+src Pug files:
+src/views/
 
 HTML build
 build/
