@@ -21,6 +21,48 @@ gulp.task('email', function() {
         .pipe(gulp.dest('./build'));
 });
 
+/*
+  Datos del nuevo gmail
+
+  user: neo3dev@gmail.com
+  pass: neo3dev123
+  Fec Nac: 14 abril 1990
+
+*/
+var mail = require('gulp-mail');
+
+var configSendEmail = {
+  smtpInfo : {
+    auth: {
+      user: 'neo3dev@gmail.com',
+      pass: 'neo3dev123'
+    },
+    host             : 'smtp.gmail.com',
+    secureConnection : true,
+    port             : 465
+  },
+  users : {
+    victor : [
+      'victormoralesf28@gmail.com',
+      'victor_flores_5@hotmail.com',
+      'neo3dev@gmail.com'
+    ],
+    ani : []
+  },
+  userActive : require("os").userInfo().username
+}
+
+gulp.task('email-send', function() {
+  return gulp.src('./build/demo.html')
+    .pipe(mail({
+      subject : 'Surprise!?',
+      to      : configSendEmail.users[configSendEmail.userActive],
+      from    : 'neo3dev <neo3dev@gmail.com>',
+      smtp    : configSendEmail.smtpInfo
+    }));
+
+})
+
 gulp.task('browser-sync', function() {
   browserSync.init({
     server: {
