@@ -9,6 +9,19 @@ body {
 .body-bg-color {
   background-color: #f0f0f0;
 }
+img {
+  outline: none;
+  text-decoration: none;
+  -ms-interpolation-mode: bicubic;
+  clear: both;
+  display: block;
+  border: none;
+  height: auto;
+  line-height: 100%;
+  margin: 0 auto;
+  float: none;
+  width: 100% !important;
+}
 #outlook a {
   padding: 0;
 }
