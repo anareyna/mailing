@@ -7,6 +7,8 @@ var mjml         = require('gulp-mjml');
 var pug          = require('gulp-pug');
 var rename       = require('gulp-rename');
 var util         = require('gulp-util');
+var mail         = require('gulp-mail');
+var runSequence  = require('run-sequence');
 
 var gulpStylus = require('gulp-stylus');
 var inlineCss = require('gulp-inline-css');
@@ -23,7 +25,7 @@ gulp.task('css', function() {
       .pipe(gulp.dest("./css"));
 });
 
-gulp.task('email', function() {
+gulp.task('html', function() {
     gulp.src('./src/views/templates/**/*.pug', {base : "./src/"})
         .pipe(pug({
             pretty  : true,
@@ -41,7 +43,6 @@ gulp.task('email', function() {
   Fec Nac: 14 abril 1990
 
 */
-var mail = require('gulp-mail');
 
 var configSendEmail = {
   smtpInfo : {
@@ -59,7 +60,10 @@ var configSendEmail = {
       'victor_flores_5@hotmail.com',
       'neo3dev@gmail.com'
     ],
-    ani : []
+    ani : [
+      'areynaw@gmail.com',
+      'ana.reyna@orbis.com.pe'
+    ]
   },
   userActive : require("os").userInfo().username
 }
@@ -86,6 +90,10 @@ gulp.task('browser-sync', function() {
 
 gulp.task('watch', function(){
     gulp.watch('./src/views/templates/**/*.pug', ['email']).on('change', browserSync.reload);
+});
+
+gulp.task('email', function(cb){
+  runSequence('css', 'html', cb);
 });
 
 gulp.task('default', ['email', 'watch', 'browser-sync']);
