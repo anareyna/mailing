@@ -1,7 +1,8 @@
+include ../../_tools/variables.pug
 include ../../_tools/mixins.pug
 
 doctype html
-//-+htmlIe()
+
 html(lang="es" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#")
     head
         link(href='../../../css/index.css' media="all" rel="stylesheet" type="text/css")
@@ -9,13 +10,14 @@ html(lang="es" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#")
 
       +body()
         +row()
-          +col6()
-          +col6()
+          +col-half()
+          +col-half()
         +row()
-          +col12()
-          +col12()
-          +col12()
-
+          +col-full()
+        +row()
+          +col-third()
+          +col-third()
+          +col-third()
 
       hr
 
@@ -220,13 +222,7 @@ html(lang="es" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#")
                       //if (IE)
               // END IMG BLOCK
               // CUPONES
-              +row()
-                +col6()
-                +col6()
 
-              +row()
-                +col6()
-                +col6()
 
 
               // END CUPONES
