@@ -1,7 +1,7 @@
 var gulp         = require('gulp');
 
 var browserSync  = require('browser-sync');
-var inlinesource = require('gulp-inline-source')
+var inlineSource = require('gulp-inline-source')
 var htmlmin      = require('gulp-htmlmin');
 var mjml         = require('gulp-mjml');
 var pug          = require('gulp-pug');
@@ -31,7 +31,9 @@ gulp.task('html', function() {
             pretty  : true,
             basedir : "./src/"
         }))
-        .pipe(inlineCss())
+        .pipe(inlineCss({
+            preserveMediaQueries: true
+          }))
         .pipe(gulp.dest('./build'));
 });
 
@@ -82,7 +84,7 @@ gulp.task('email-send', function() {
 gulp.task('browser-sync', function() {
   browserSync.init({
     server: {
-      baseDir: "./build"
+      baseDir: "./build/views/templates"
     },
 		startPath: ''
   });
@@ -96,4 +98,6 @@ gulp.task('email', function(cb){
   runSequence('css', 'html', cb);
 });
 
-gulp.task('default', ['email', 'watch', 'browser-sync']);
+gulp.task('default', function(cb) {
+  runSequence('email', 'watch', 'browser-sync', cb);
+});
