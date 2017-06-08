@@ -1,4 +1,4 @@
-include variables.pug
+include /pug/_tools/variables.pug
 
 mixin ie(condition, content)
   | <!--[!{condition}]>
@@ -32,11 +32,9 @@ mixin row()
                       // FILA
                       tr(style='vertical-align: top')
                         td(style='word-break: break-word;border-collapse: collapse !important;vertical-align: top;text-align: center;font-size: 0')
-                          //if (gte mso 9)|(IE)
-                            table(width='100%', align='center', bgcolor='#FFFFFF', cellpadding='0', cellspacing='0', border='0')
-                              tr
+
                           block
-                          //if (gte mso 9)|(IE)
+
                       // END FILA
           +ie('if mso ')
             | </td></tr></table>
@@ -49,9 +47,9 @@ mixin col-half()
   +ie('if (gte mso 9)|(IE)')
     | <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0"><tr>
   +ie('if (gte mso 9)|(IE)')
-    | <td valign="top" width="!{config.width / 2}">
+    | <td class="num6" valign="top">
 
-  .col.num6(style="width: 300px")
+  .col.num6
     table(style='border-spacing: 0;border-collapse: collapse;vertical-align: top', cellpadding='0', cellspacing='0', align='center', width='100%', border='0')
       tbody
         tr(style='vertical-align: top')
@@ -98,7 +96,7 @@ mixin col-third()
   +ie('if (gte mso 9)|(IE)')
     | <td valign="top" width="!{config.width / 3}">
 
-  .col.num4(style="width: 200px")
+  .col.num4
     table(style='border-spacing: 0;border-collapse: collapse;vertical-align: top', cellpadding='0', cellspacing='0', align='center', width='100%', border='0')
       tbody
         tr(style='vertical-align: top')
@@ -150,12 +148,12 @@ mixin col-full()
       tbody
         tr(style='vertical-align: top')
           td(style='word-break: break-word;border-collapse: collapse !important;vertical-align: top;background-color: transparent;padding-top: 5px;padding-right: 0px;padding-bottom: 5px;padding-left: 0px;border-top: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-left: 0px solid transparent')
-            table(style='border-spacing: 0;border-collapse: collapse;vertical-align: top', cellpadding='0', cellspacing='0', width='100%', border='0')
-              tbody
-                tr(style='vertical-align: top')
-                  td(style='word-break: break-word;border-collapse: collapse !important;vertical-align: top;width: 100%;padding:0 20px 10px;', align='center')
-                    a(href='http://ofertop.banner2', style='text-decoration:none;display:block;border:none;')
-                      img.center(style='outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block;border: 0;height: auto;line-height: 100%;margin: 0 auto;float: none;width: 100%;max-width: 100%', align='center', border='0', src='http://i.imgur.com/tcE275z.jpg', alt='Image', title='Image', width='100%')
+            //- table(style='border-spacing: 0;border-collapse: collapse;vertical-align: top', cellpadding='0', cellspacing='0', width='100%', border='0')
+            //-   tbody
+            //-     tr(style='vertical-align: top')
+            //-       td(style='word-break: break-word;border-collapse: collapse !important;vertical-align: top;width: 100%;padding:0 20px 10px;', align='center')
+            //-         a(href='http://ofertop.banner2', style='text-decoration:none;display:block;border:none;')
+            //-           img.center(style='outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block;border: 0;height: auto;line-height: 100%;margin: 0 auto;float: none;width: 100%;max-width: 100%', align='center', border='0', src='http://i.imgur.com/tcE275z.jpg', alt='Image', title='Image', width='100%')
   +ie('if (gte mso 9)|(IE)')
     | </td>
   +ie('if (gte mso 9)|(IE)')
