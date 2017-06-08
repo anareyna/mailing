@@ -5,7 +5,7 @@ gulp.task('css', function() {
     return gulp.src([
         './stylus/**/*.styl',
         '!./stylus/_**/*.styl'
-        ])
+        ], { base : './stylus' })
       .pipe(gulpStylus({
           compress : false,
           linenos  : false,
@@ -13,5 +13,5 @@ gulp.task('css', function() {
               title:'styles'
           }
       }))
-      .pipe(gulp.dest("./css"));
+      .pipe(gulp.dest('./css'));
 });
