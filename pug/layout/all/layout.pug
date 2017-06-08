@@ -4,20 +4,20 @@ include /pug/_tools/mixins
 doctype html
 
 html(lang="es" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#")
-  head
-    link(href=`${config.static_url}css/modules/all/all.css` media="all" rel="stylesheet" type="text/css")
+    head
+        link(href=`${config.static_url}css/modules/all/all.css` media="all" rel="stylesheet" type="text/css")
 
-    block styles
+        block styles
 
-    style.
-      mediaQueries
+        style.
+            mediaQueries
 
-  body
+    body
 
-    +body()
-      include /pug/render/all/header
+        +body()
+            include /pug/render/all/header
 
-      block content
+            block content
 
-      include /pug/render/all/footer
+            include /pug/render/all/footer
 
