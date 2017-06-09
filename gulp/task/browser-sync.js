@@ -6,7 +6,7 @@ var browserSync  = require('browser-sync');
 gulp.task('browser-sync', function() {
   return browserSync.init({
     server: {
-      baseDir: "./build/views/templates"
+      baseDir: "./build/pug/modules"
     },
 		startPath: ''
   });
