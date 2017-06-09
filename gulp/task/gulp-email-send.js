@@ -3,10 +3,14 @@
   user: neo3dev@gmail.com
   pass: neo3dev123
   Fec Nac: 14 abril 1990
+  
+  -- Ejemplo --
+  gulp email-send --path publicacion/concesionario/pagar-paquete.html
 */
 
 var gulp = require('gulp');
 var mail = require('gulp-mail');
+var argv = require('yargs').argv;
 
 var config = {
   smtpInfo : {
@@ -34,12 +38,11 @@ var config = {
 
 
 gulp.task('email-send', function() {
-  return gulp.src('./build/views/templates/index.html')
-    .pipe(mail({
-      subject : 'Surprise!?',
-      to      : config.users[config.userActive],
-      from    : 'neo3dev <neo3dev@gmail.com>',
-      smtp    : config.smtpInfo
-    }));
-
+    return gulp.src('./build/html/' + argv.path)
+        .pipe(mail({
+            subject : "Mensaje de prueba: " + argv.path,
+            to      : config.users[config.userActive],
+            from    : 'neo3dev <neo3dev@gmail.com>',
+            smtp    : config.smtpInfo
+        }));
 })

@@ -25,11 +25,11 @@ block content
         p Nombre del paquete: !{echo("namePackage")}
         p Duración: {{=duration}}
         p Modelo de Ficha: {{=sheetModel}}
+        +js.
+            printedNews = printedNews + " ->lala--"
         p Avisos Impresos: {{=printedNews}}
 
         +if("onlineShop != ''")
-            +js.
-                onlineShop = onlineShop + " ->lala--"
             p Tienda Virtual: {{=onlineShop}}
 
         p Adicionales:

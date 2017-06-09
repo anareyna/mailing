@@ -3,7 +3,7 @@ var browserSync = require('browser-sync');
 var runSequence = require('run-sequence');
 
 gulp.task('default', function(){
-    runSequence('css', 'html');
+    return runSequence('css', 'html');
 });
 
 gulp.task('watch', ['browser-sync'], function(){

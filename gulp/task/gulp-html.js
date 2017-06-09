@@ -13,7 +13,7 @@ lodash.templateSettings = {
 var basePath  = './';
 
 gulp.task('html', function() {
-    return gulp.src('./pug/modules/**/*.pug', { base : basePath})
+    return gulp.src(['./pug/modules/**/**/*.pug'])
         .pipe(pug({
             pretty  : true,
             basedir : basePath
@@ -38,5 +38,5 @@ gulp.task('html', function() {
             chunk.contents   = new Buffer(newContent, "utf-8");
             callback(null, chunk);
          }))
-        .pipe(gulp.dest('./build'));
+        .pipe(gulp.dest('./build/html'));
 });
