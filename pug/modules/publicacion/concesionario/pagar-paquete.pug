@@ -29,10 +29,9 @@ block content
 
         +if("onlineShop != ''")
             +js.
-                onlineShop = onlineShop + " ->lala"
+                onlineShop = onlineShop + " ->lala--"
             p Tienda Virtual: {{=onlineShop}}
 
         p Adicionales:
             +for("var i = 0; i< additional.length; i++")
                 | {{=additional[i]}}, 
-

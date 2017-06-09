@@ -3,9 +3,11 @@ var browserSync = require('browser-sync');
 var runSequence = require('run-sequence');
 
 gulp.task('default', function(){
-    runSequence('css', 'html', 'browser-sync:reload');
+    runSequence('css', 'html');
 });
 
 gulp.task('watch', ['browser-sync'], function(){
-    return gulp.watch('./src/views/templates/*.pug', ['default']);
+    return gulp.watch(['./pug/**/*.pug', './stylus/**/*.styl'], function(){
+        runSequence('css', 'html', 'browser-sync:reload');
+    });
 });
