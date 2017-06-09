@@ -1,160 +1,208 @@
 include /pug/_tools/variables.pug
 
 mixin ie(condition, content)
-  | <!--[!{condition}]>
-  block
-  | <![endif]-->
+    | <!--[!{condition}]>
+    block
+    | <![endif]-->
 
 
 mixin body()
-  table.body(style='border-spacing: 0;border-collapse: collapse;vertical-align: top;height: 100%;width: 100%;table-layout: fixed', cellpadding='0', cellspacing='0', width='100%', border='0')
-    tbody
-      tr(style='vertical-align: top')
-        td.center(style='word-break: break-word;border-collapse: collapse !important;vertical-align: top;text-align: center;background-color: #FFFFFF', align='center', valign='top')
-          block
+    table.body(style='border-spacing: 0;border-collapse: collapse;vertical-align: top;height: 100%;width: 100%;table-layout: fixed', cellpadding='0', cellspacing='0', width='100%', border='0')&attributes(attributes)
+        tbody
+            tr(style='vertical-align: top')
+                td(style='word-break: break-word;border-collapse: collapse !important;vertical-align: top;background-color: #FFFFFF', valign='top')
+                    block
 
 mixin row()
-  table.body-bg-color(style='border-spacing: 0;border-collapse: collapse;vertical-align: top;', cellpadding='0', cellspacing='0', align='center', width='100%', border='0')
-    tbody
-      tr(style='vertical-align: top')
-        td(style='word-break: break-word;border-collapse: collapse !important;vertical-align: top', width='100%')
-          +ie('if gte mso 9')
-            | <table id="outlookholder" border="0" cellspacing="0" cellpadding="0" align="center"><tr><td>
-          +ie('if (IE)')
-            | <table width="!{config.width}" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td>
-
-          table.container(style='border-spacing: 0;border-collapse: collapse;vertical-align: top;margin: 0 auto;text-align: inherit', cellpadding='0', cellspacing='0', align='center', width='100%', border='0')
-            tbody
-              tr(style='vertical-align: top')
+    table.body-bg-color(style='border-spacing: 0;border-collapse: collapse;vertical-align: top;', cellpadding='0', cellspacing='0', width='100%', border='0')&attributes(attributes)
+        tbody
+            tr(style='vertical-align: top')
                 td(style='word-break: break-word;border-collapse: collapse !important;vertical-align: top', width='100%')
-                  table.block-grid.two-up(cellpadding='0', cellspacing='0', width='100%')
-                    tbody
-                      // FILA
-                      tr(style='vertical-align: top')
-                        td(style='word-break: break-word;border-collapse: collapse !important;vertical-align: top;text-align: center;font-size: 0')
+                    +ie('if gte mso 9')
+                        | <table id="outlookholder" border="0" cellspacing="0" cellpadding="0"><tr><td>
+                    +ie('if (IE)')
+                        | <table width="!{config.width}" cellpadding="0" cellspacing="0" border="0"><tr><td>
 
-                          block
+                    table.container(style='border-spacing: 0;border-collapse: collapse;vertical-align: top;margin: 0 auto;text-align: inherit', cellpadding='0', cellspacing='0', align='center', width='100%', border='0')
+                        tbody
+                            tr(style='vertical-align: top')
+                                td(style='word-break: break-word;border-collapse: collapse !important;vertical-align: top', width='100%')
+                                    table.block-grid.two-up(cellpadding='0', cellspacing='0', width='100%')
+                                        tbody
+                                            // FILA
+                                            tr(style='vertical-align: top')
+                                                td.paddingRow(style='word-break: break-word;border-collapse: collapse !important;vertical-align: top;font-size: 0')
 
-                      // END FILA
-          +ie('if mso ')
-            | </td></tr></table>
-          +ie('if (IE)')
-            | </td></tr></table>
+                                                    block
 
-
-mixin col-half()
-
-  +ie('if (gte mso 9)|(IE)')
-    | <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0"><tr>
-  +ie('if (gte mso 9)|(IE)')
-    | <td class="num6" valign="top">
-
-  .col.num6
-    table(style='border-spacing: 0;border-collapse: collapse;vertical-align: top', cellpadding='0', cellspacing='0', align='center', width='100%', border='0')
-      tbody
-        tr(style='vertical-align: top')
-          td(style='word-break: break-word;border-collapse: collapse !important;vertical-align: top;background-color: transparent;padding-top: 5px;padding-right: 0px;padding-bottom: 5px;padding-left: 0px;border-top: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-left: 0px solid transparent')
-
-            block
+                                            // END FILA
+                    +ie('if mso ')
+                        | </td></tr></table>
+                    +ie('if (IE)')
+                        | </td></tr></table>
 
 
-            a(href='', style='display:block;text-decoration:none;border:none;')
-              table(style='border-spacing: 0;border-collapse: collapse;vertical-align: top', cellpadding='0', cellspacing='0', width='100%', border='0')
-                tbody
-                  tr(style='vertical-align: top')
-                    td(style='word-break: break-word;border-collapse: collapse !important;vertical-align: top;width: 100%;padding-top: 10px;padding-right: 20px;padding-bottom: 0px;padding-left: 20px', align='center', bgcolor='')
-                      div(style='font-size:12px', align='center')
-                        a(href='', target='_blank')
-                          img.center.fullwidth(style='outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block;border: none;height: auto;line-height: 100%;margin: 0 auto;float: none;width: 100% !important;max-width: 260px', align='center', border='0', src='http://i.imgur.com/sFMLRBc.jpg', alt='Oferta', title='Oferta', width='260')
-              table(style='border-spacing: 0;border-collapse: collapse;vertical-align: top', cellpadding='0', cellspacing='0', width='100%')
-                tbody
-                  tr(style='vertical-align: top')
-                    td(style='word-break: break-word;border-collapse: collapse !important;vertical-align: top;padding-top: 0;padding-right: 20px;padding-bottom: 5px;padding-left: 20px')
-                      div(style='color:#61626F;line-height:120%;font-family:Tahoma, Verdana, Segoe, sans-serif;background:#f4f2f1;display:block;padding:10px 10px 0;')
-                        div(style='font-size:12px;line-height:14px;color:#61626F;font-family:Tahoma, Verdana, Segoe, sans-serif;text-align:left;')
-                          p(style='margin: 0;font-size: 18px;line-height: 22px;text-align: left;border-bottom: 1px solid #d1d3d4;padding-bottom:10px;')
-                            span(style='font-size: 14px; line-height: 16px;')
-                              | La Molina: Alisado para embarazadas o mujeres en periodo de lactancia y más en Alisados Serenova
-                          table(style='padding: 0; margin:0;', border='0', cellpadding='0', cellspacing='0', width='100%')
-                            tbody
-                              tr
-                                td(style='display:block;padding-top:15px;')
-                                  s(style='font-size:13px; line-height:13px;') Antes S/. 2,000.00
-                                  p(style='font-size:14px; line-height:15px; margin:0; color:#DB081B; font-weight:bold;') Ahora S/. 1,290.90
-                                td(align='right', style='padding-top:10px;')
-                                  span(style='border:1px solid #ddd;font-size: 13px; color: #606060; padding: 0 5px; font-family: Tahoma, Arial, sans-serif; text-decoration: none; text-align: center; margin: 4px auto 20px; display:inline-block; font-weight:bold; height:32px; line-height:32px') -60%
-                                  span(style='background: #DB081B;font-size: 16px; color: white; padding: 0 10px; font-family: Tahoma, Arial, sans-serif; text-decoration: none; text-align: center; margin: 4px 0 20px; display:inline-block; height:32px; line-height:32px;') Ver
-  +ie('if (gte mso 9)|(IE)')
-    | </td>
-  +ie('if (gte mso 9)|(IE)')
-    | </td></tr></table>
+mixin col-one-half()
 
-mixin col-third()
+    +ie('if (gte mso 9)|(IE)')
+        | <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0"><tr>
+    +ie('if (gte mso 9)|(IE)')
+        | <td class="num6" valign="top">
 
-  +ie('if (gte mso 9)|(IE)')
-    | <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0"><tr>
-  +ie('if (gte mso 9)|(IE)')
-    | <td valign="top" width="!{config.width / 3}">
+    .col.num6
+        table(style='border-spacing: 0;border-collapse: collapse;vertical-align: top', cellpadding='0', cellspacing='0', align='center', width='100%', border='0')&attributes(attributes)
+            tbody
+                tr(style='vertical-align: top')
+                    td(style='word-break: break-word;border-collapse: collapse !important;vertical-align: top;background-color: transparent;padding-top: 5px;padding-right: 0px;padding-bottom: 5px;padding-left: 0px;border-top: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-left: 0px solid transparent; font-size: 16px;')
 
-  .col.num4
-    table(style='border-spacing: 0;border-collapse: collapse;vertical-align: top', cellpadding='0', cellspacing='0', align='center', width='100%', border='0')
-      tbody
-        tr(style='vertical-align: top')
-          td(style='word-break: break-word;border-collapse: collapse !important;vertical-align: top;background-color: transparent;padding-top: 5px;padding-right: 0px;padding-bottom: 5px;padding-left: 0px;border-top: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-left: 0px solid transparent')
-
-            block
+                        block
 
 
-            a(href='', style='display:block;text-decoration:none;border:none;')
-              table(style='border-spacing: 0;border-collapse: collapse;vertical-align: top', cellpadding='0', cellspacing='0', width='100%', border='0')
-                tbody
-                  tr(style='vertical-align: top')
-                    td(style='word-break: break-word;border-collapse: collapse !important;vertical-align: top;width: 100%;padding-top: 10px;padding-right: 20px;padding-bottom: 0px;padding-left: 20px', align='center', bgcolor='')
-                      div(style='font-size:12px', align='center')
-                        a(href='', target='_blank')
-                          img.center.fullwidth(style='outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block;border: none;height: auto;line-height: 100%;margin: 0 auto;float: none;width: 100% !important;max-width: 260px', align='center', border='0', src='http://i.imgur.com/sFMLRBc.jpg', alt='Oferta', title='Oferta', width='260')
-              table(style='border-spacing: 0;border-collapse: collapse;vertical-align: top', cellpadding='0', cellspacing='0', width='100%')
-                tbody
-                  tr(style='vertical-align: top')
-                    td(style='word-break: break-word;border-collapse: collapse !important;vertical-align: top;padding-top: 0;padding-right: 20px;padding-bottom: 5px;padding-left: 20px')
-                      div(style='color:#61626F;line-height:120%;font-family:Tahoma, Verdana, Segoe, sans-serif;background:#f4f2f1;display:block;padding:10px 10px 0;')
-                        div(style='font-size:12px;line-height:14px;color:#61626F;font-family:Tahoma, Verdana, Segoe, sans-serif;text-align:left;')
-                          p(style='margin: 0;font-size: 18px;line-height: 22px;text-align: left;border-bottom: 1px solid #d1d3d4;padding-bottom:10px;')
-                            span(style='font-size: 14px; line-height: 16px;')
-                              | La Molina: Alisado para embarazadas o mujeres en periodo de lactancia y más en Alisados Serenova
-                          table(style='padding: 0; margin:0;', border='0', cellpadding='0', cellspacing='0', width='100%')
-                            tbody
-                              tr
-                                td(style='display:block;padding-top:15px;')
-                                  s(style='font-size:13px; line-height:13px;') Antes S/. 2,000.00
-                                  p(style='font-size:14px; line-height:15px; margin:0; color:#DB081B; font-weight:bold;') Ahora S/. 1,290.90
-                                td(align='right', style='padding-top:10px;')
-                                  span(style='border:1px solid #ddd;font-size: 13px; color: #606060; padding: 0 5px; font-family: Tahoma, Arial, sans-serif; text-decoration: none; text-align: center; margin: 4px auto 20px; display:inline-block; font-weight:bold; height:32px; line-height:32px') -60%
-                                  span(style='background: #DB081B;font-size: 16px; color: white; padding: 0 10px; font-family: Tahoma, Arial, sans-serif; text-decoration: none; text-align: center; margin: 4px 0 20px; display:inline-block; height:32px; line-height:32px;') Ver
-  +ie('if (gte mso 9)|(IE)')
-    | </td>
-  +ie('if (gte mso 9)|(IE)')
-    | </td></tr></table>
+                        a(href='', style='display:block;text-decoration:none;border:none;')
+                            table(style='border-spacing: 0;border-collapse: collapse;vertical-align: top', cellpadding='0', cellspacing='0', width='100%', border='0')
+                                tbody
+                                    tr(style='vertical-align: top')
+                                        td(style='word-break: break-word;border-collapse: collapse !important;vertical-align: top;width: 100%;padding-top: 10px;padding-right: 20px;padding-bottom: 0px;padding-left: 20px', align='center', bgcolor='')
+                                            div(style='font-size:12px', align='center')
+                                                a(href='', target='_blank')
+                                                    img.center.fullwidth(style='outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block;border: none;height: auto;line-height: 100%;margin: 0 auto;float: none;width: 100% !important;max-width: 260px', align='center', border='0', src='http://i.imgur.com/sFMLRBc.jpg', alt='Oferta', title='Oferta', width='260')
+                            table(style='border-spacing: 0;border-collapse: collapse;vertical-align: top', cellpadding='0', cellspacing='0', width='100%')
+                                tbody
+                                    tr(style='vertical-align: top')
+                                        td(style='word-break: break-word;border-collapse: collapse !important;vertical-align: top;padding-top: 0;padding-right: 20px;padding-bottom: 5px;padding-left: 20px')
+                                            div(style='color:#61626F;line-height:120%;font-family:Tahoma, Verdana, Segoe, sans-serif;background:#f4f2f1;display:block;padding:10px 10px 0;')
+                                                div(style='font-size:12px;line-height:14px;color:#61626F;font-family:Tahoma, Verdana, Segoe, sans-serif;text-align:left;')
+                                                    p(style='margin: 0;font-size: 18px;line-height: 22px;text-align: left;border-bottom: 1px solid #d1d3d4;padding-bottom:10px;')
+                                                        span(style='font-size: 14px; line-height: 16px;')
+                                                            | La Molina: Alisado para embarazadas o mujeres en periodo de lactancia y más en Alisados Serenova
+                                                    table(style='padding: 0; margin:0;', border='0', cellpadding='0', cellspacing='0', width='100%')
+                                                        tbody
+                                                            tr
+                                                                td(style='display:block;padding-top:15px;')
+                                                                    s(style='font-size:13px; line-height:13px;') Antes S/. 2,000.00
+                                                                    p(style='font-size:14px; line-height:15px; margin:0; color:#DB081B; font-weight:bold;') Ahora S/. 1,290.90
+                                                                td(align='right', style='padding-top:10px;')
+                                                                    span(style='border:1px solid #ddd;font-size: 13px; color: #606060; padding: 0 5px; font-family: Tahoma, Arial, sans-serif; text-decoration: none; text-align: center; margin: 4px auto 20px; display:inline-block; font-weight:bold; height:32px; line-height:32px') -60%
+                                                                    span(style='background: #DB081B;font-size: 16px; color: white; padding: 0 10px; font-family: Tahoma, Arial, sans-serif; text-decoration: none; text-align: center; margin: 4px 0 20px; display:inline-block; height:32px; line-height:32px;') Ver
+    +ie('if (gte mso 9)|(IE)')
+        | </td>
+    +ie('if (gte mso 9)|(IE)')
+        | </td></tr></table>
+
+mixin col-one-third()
+
+    +ie('if (gte mso 9)|(IE)')
+        | <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0"><tr>
+    +ie('if (gte mso 9)|(IE)')
+        | <td valign="top" width="!{config.width / 3}">
+
+    .col.num4
+        table(style='border-spacing: 0;border-collapse: collapse;vertical-align: top', cellpadding='0', cellspacing='0', align='center', width='100%', border='0')&attributes(attributes)
+            tbody
+                tr(style='vertical-align: top')
+                    td(style='word-break: break-word;border-collapse: collapse !important;vertical-align: top;background-color: transparent;padding-top: 5px;padding-right: 0px;padding-bottom: 5px;padding-left: 0px;border-top: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-left: 0px solid transparent; font-size: 16px;')
+
+                        block
+
+
+                        a(href='', style='display:block;text-decoration:none;border:none;')
+                            table(style='border-spacing: 0;border-collapse: collapse;vertical-align: top', cellpadding='0', cellspacing='0', width='100%', border='0')
+                                tbody
+                                    tr(style='vertical-align: top')
+                                        td(style='word-break: break-word;border-collapse: collapse !important;vertical-align: top;width: 100%;padding-top: 10px;padding-right: 20px;padding-bottom: 0px;padding-left: 20px', align='center', bgcolor='')
+                                            div(style='font-size:12px', align='center')
+                                                a(href='', target='_blank')
+                                                    img(style='outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block;border: none;height: auto;line-height: 100%;margin: 0 auto;float: none;width: 100% !important;max-width: 260px', align='center', border='0', src='http://i.imgur.com/sFMLRBc.jpg', alt='Oferta', title='Oferta', width='260')
+                            table(style='border-spacing: 0;border-collapse: collapse;vertical-align: top', cellpadding='0', cellspacing='0', width='100%')
+                                tbody
+                                    tr(style='vertical-align: top')
+                                        td(style='word-break: break-word;border-collapse: collapse !important;vertical-align: top;padding-top: 0;padding-right: 20px;padding-bottom: 5px;padding-left: 20px')
+                                            div(style='color:#61626F;line-height:120%;font-family:Tahoma, Verdana, Segoe, sans-serif;background:#f4f2f1;display:block;padding:10px 10px 0;')
+                                                div(style='font-size:12px;line-height:14px;color:#61626F;font-family:Tahoma, Verdana, Segoe, sans-serif;text-align:left;')
+                                                    p(style='margin: 0;font-size: 18px;line-height: 22px;text-align: left;border-bottom: 1px solid #d1d3d4;padding-bottom:10px;')
+                                                        span(style='font-size: 14px; line-height: 16px;')
+                                                            | La Molina: Alisado para embarazadas o mujeres en periodo de lactancia y más en Alisados Serenova
+                                                    table(style='padding: 0; margin:0;', border='0', cellpadding='0', cellspacing='0', width='100%')
+                                                        tbody
+                                                            tr
+                                                                td(style='display:block;padding-top:15px;')
+                                                                    s(style='font-size:13px; line-height:13px;') Antes S/. 2,000.00
+                                                                    p(style='font-size:14px; line-height:15px; margin:0; color:#DB081B; font-weight:bold;') Ahora S/. 1,290.90
+                                                                td(align='right', style='padding-top:10px;')
+                                                                    span(style='border:1px solid #ddd;font-size: 13px; color: #606060; padding: 0 5px; font-family: Tahoma, Arial, sans-serif; text-decoration: none; text-align: center; margin: 4px auto 20px; display:inline-block; font-weight:bold; height:32px; line-height:32px') -60%
+                                                                    span(style='background: #DB081B;font-size: 16px; color: white; padding: 0 10px; font-family: Tahoma, Arial, sans-serif; text-decoration: none; text-align: center; margin: 4px 0 20px; display:inline-block; height:32px; line-height:32px;') Ver
+    +ie('if (gte mso 9)|(IE)')
+        | </td>
+    +ie('if (gte mso 9)|(IE)')
+        | </td></tr></table>
+
+
+mixin col-two-thirds()
+
+    +ie('if (gte mso 9)|(IE)')
+        | <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0"><tr>
+    +ie('if (gte mso 9)|(IE)')
+        | <td valign="top" width="!{(config.width / 3) * 2}">
+
+    .col.num8
+        table(style='border-spacing: 0;border-collapse: collapse;vertical-align: top', cellpadding='0', cellspacing='0', align='center', width='100%', border='0')&attributes(attributes)
+            tbody
+                tr(style='vertical-align: top')
+                    td(style='word-break: break-word;border-collapse: collapse !important;vertical-align: top;background-color: transparent;padding-top: 5px;padding-right: 0px;padding-bottom: 5px;padding-left: 0px;border-top: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-left: 0px solid transparent; font-size: 16px;')
+
+                        block
+
+
+                        a(href='', style='display:block;text-decoration:none;border:none;')
+                            table(style='border-spacing: 0;border-collapse: collapse;vertical-align: top', cellpadding='0', cellspacing='0', width='100%', border='0')
+                                tbody
+                                    tr(style='vertical-align: top')
+                                        td(style='word-break: break-word;border-collapse: collapse !important;vertical-align: top;width: 100%;padding-top: 10px;padding-right: 20px;padding-bottom: 0px;padding-left: 20px', align='center', bgcolor='')
+                                            div(style='font-size:12px', align='center')
+                                                a(href='', target='_blank')
+                                                    img(style='outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block;border: none;height: auto;line-height: 100%;margin: 0 auto;float: none;width: 100% !important;max-width: 260px', align='center', border='0', src='http://i.imgur.com/sFMLRBc.jpg', alt='Oferta', title='Oferta', width='260')
+                            table(style='border-spacing: 0;border-collapse: collapse;vertical-align: top', cellpadding='0', cellspacing='0', width='100%')
+                                tbody
+                                    tr(style='vertical-align: top')
+                                        td(style='word-break: break-word;border-collapse: collapse !important;vertical-align: top;padding-top: 0;padding-right: 20px;padding-bottom: 5px;padding-left: 20px')
+                                            div(style='color:#61626F;line-height:120%;font-family:Tahoma, Verdana, Segoe, sans-serif;background:#f4f2f1;display:block;padding:10px 10px 0;')
+                                                div(style='font-size:12px;line-height:14px;color:#61626F;font-family:Tahoma, Verdana, Segoe, sans-serif;text-align:left;')
+                                                    p(style='margin: 0;font-size: 18px;line-height: 22px;text-align: left;border-bottom: 1px solid #d1d3d4;padding-bottom:10px;')
+                                                        span(style='font-size: 14px; line-height: 16px;')
+                                                            | La Molina: Alisado para embarazadas o mujeres en periodo de lactancia y más en Alisados Serenova
+                                                    table(style='padding: 0; margin:0;', border='0', cellpadding='0', cellspacing='0', width='100%')
+                                                        tbody
+                                                            tr
+                                                                td(style='display:block;padding-top:15px;')
+                                                                    s(style='font-size:13px; line-height:13px;') Antes S/. 2,000.00
+                                                                    p(style='font-size:14px; line-height:15px; margin:0; color:#DB081B; font-weight:bold;') Ahora S/. 1,290.90
+                                                                td(align='right', style='padding-top:10px;')
+                                                                    span(style='border:1px solid #ddd;font-size: 13px; color: #606060; padding: 0 5px; font-family: Tahoma, Arial, sans-serif; text-decoration: none; text-align: center; margin: 4px auto 20px; display:inline-block; font-weight:bold; height:32px; line-height:32px') -60%
+                                                                    span(style='background: #DB081B;font-size: 16px; color: white; padding: 0 10px; font-family: Tahoma, Arial, sans-serif; text-decoration: none; text-align: center; margin: 4px 0 20px; display:inline-block; height:32px; line-height:32px;') Ver
+    +ie('if (gte mso 9)|(IE)')
+        | </td>
+    +ie('if (gte mso 9)|(IE)')
+        | </td></tr></table>
 
 mixin col-full()
 
-  +ie('if (gte mso 9)|(IE)')
-    | <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0"><tr>
-  +ie('if (gte mso 9)|(IE)')
-    | <td valign="top" width="!{config.width}">
+    +ie('if (gte mso 9)|(IE)')
+        | <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0"><tr>
+    +ie('if (gte mso 9)|(IE)')
+        | <td valign="top" width="!{config.width}">
 
-  .col.num12(style='display: inline-block;vertical-align: top;width: 100%')
-    table(style='border-spacing: 0;border-collapse: collapse;vertical-align: top', cellpadding='0', cellspacing='0', align='center', width='100%', border='0')
-      tbody
-        tr(style='vertical-align: top')
-          td(style='word-break: break-word;border-collapse: collapse !important;vertical-align: top;background-color: transparent;padding-top: 5px;padding-right: 0px;padding-bottom: 5px;padding-left: 0px;border-top: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-left: 0px solid transparent')
-            //- table(style='border-spacing: 0;border-collapse: collapse;vertical-align: top', cellpadding='0', cellspacing='0', width='100%', border='0')
-            //-   tbody
-            //-     tr(style='vertical-align: top')
-            //-       td(style='word-break: break-word;border-collapse: collapse !important;vertical-align: top;width: 100%;padding:0 20px 10px;', align='center')
-            //-         a(href='http://ofertop.banner2', style='text-decoration:none;display:block;border:none;')
-            //-           img.center(style='outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block;border: 0;height: auto;line-height: 100%;margin: 0 auto;float: none;width: 100%;max-width: 100%', align='center', border='0', src='http://i.imgur.com/tcE275z.jpg', alt='Image', title='Image', width='100%')
-  +ie('if (gte mso 9)|(IE)')
-    | </td>
-  +ie('if (gte mso 9)|(IE)')
-    | </td></tr></table>
+    .col.num12(style='display: inline-block;vertical-align: top;width: 100%')
+        table(style='border-spacing: 0;border-collapse: collapse;vertical-align: top', cellpadding='0', cellspacing='0', align='center', width='100%', border='0')&attributes(attributes)
+            tbody
+                tr(style='vertical-align: top')
+                    td(style='word-break: break-word;border-collapse: collapse !important;vertical-align: top;background-color: transparent;padding-top: 5px;padding-right: 0px;padding-bottom: 5px;padding-left: 0px;border-top: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-left: 0px solid transparent; font-size: 16px;')
+                        //- table(style='border-spacing: 0;border-collapse: collapse;vertical-align: top', cellpadding='0', cellspacing='0', width='100%', border='0')
+                          tbody
+                            tr(style='vertical-align: top')
+                              td(style='word-break: break-word;border-collapse: collapse !important;vertical-align: top;width: 100%;padding:0 20px 10px;', align='center')
+                                a(href='http://ofertop.banner2', style='text-decoration:none;display:block;border:none;')
+                                  img(style='outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block;border: 0;height: auto;line-height: 100%;margin: 0 auto;float: none;width: 100%;max-width: 100%', align='center', border='0', src='http://i.imgur.com/tcE275z.jpg', alt='Image', title='Image', width='100%')
+    +ie('if (gte mso 9)|(IE)')
+        | </td>
+    +ie('if (gte mso 9)|(IE)')
+        | </td></tr></table>

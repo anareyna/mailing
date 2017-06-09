@@ -19,6 +19,7 @@ gulp.task('html', function() {
             basedir : basePath
         }))
         .pipe(inlineCss({
+            removeLinkTags: false,
             removeStyleTags: false
         }))
         .pipe(through2.obj(function(chunk, encoding, callback) {
