@@ -1,5 +1,3 @@
-@require $pathBase + '/stylus/_tools/variables.styl'
-
 // Custom Styles
 
 body
@@ -21,36 +19,49 @@ img
     line-height 100%
     margin 0
     float none
+p
+    margin 10px 0
+    line-height 1.5
 
 .btn
+    font-family $fontFamily
+    text-align center
     display block
+    margin 0 auto
     color white
     background-color $brandColor
-    padding 20px 30px
-    font-size 16px
+    padding 12px 30px
+    font-size 18px
     border none
     outline none
     text-decoration none
+    cursor pointer
 
-.text
-    //font-size $fontSizeBase
+
+.link
+    text-decoration none
+    outline none
+    display inline-block
+    margin 0
+    padding 0
+    cursor pointer
+
+.subtitle
     font-family $fontFamily
-    color $textColor
+    font-size 22px
+    border-bottom 1px solid #ccc
+    display block
+    padding-bottom 10px
+    margin 15px 0
+    font-weight normal
 
-.f16
-    font-size 16px !important
-.f18
-    font-size 18px !important
-.f20
-    font-size 20px !important
-.f22
-    font-size 22px !important
-.f24
-    font-size 24px !important
+.spacer
+    height 30px
+    width 100%
+    content '&nbsp;'
+    font-size 0
+    color transparent
+    display block
 
-.align-left
-    text-align left
-.align-right
-    text-align right
-.align-center
-    text-align center
+
+

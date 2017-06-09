@@ -57,16 +57,23 @@
   table[class="body"] .hide-for-desktop {
     display: inherit !important;
   }
+  table[class="body"] .mobile-align-center {
+    text-align: center !important;
+  }
+  table[class="body"] .mobile-align-left {
+    text-align: left !important;
+  }
+  table[class="body"] .mobile-align-right {
+    text-align: right !important;
+  }
   .mixed-two-up .col {
     width: 100% !important;
   }
-}
-@media screen and (max-width: 600px) {
   div[class="col"] {
     width: 100% !important;
   }
 }
-@media screen and (max-width: 600px) and (min-width: 601px) {
+@media screen and (min-width: 601px) {
   table[class="container"] {
     width: 600px !important;
   }

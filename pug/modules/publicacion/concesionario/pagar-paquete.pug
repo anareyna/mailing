@@ -1,4 +1,5 @@
 extends /pug/layout/all/layout.pug
+
 block styles
     link(href=`${config.static_url}css/modules/publicacion/concesionario/pagar-paquete.css` media="all" rel="stylesheet" type="text/css")
 
@@ -7,33 +8,59 @@ block content
         +col-one-half()
             img(src="http://cds.neoauto.g3c.pe/neoauto3/img/neoauto.png" width="207")
         +col-one-half()
-            h2.text.fs20.align-right Confirmación de compra
-            h2.text.align-right Confirmación de compra
+            h2.text.fs20.align-center.fw-normal(style="padding-top: 10px") Confirmación de Compra
 
     +row()
         +col-full()
-
+            p.text Estimado&nbsp;
+                strong Mitsui
+            p.text ¡Felicitaciones!. Se ha registrado con éxito el pago de su&nbsp;
+                strong.text-color Paquete !{echo("namePackage")}
     +row()
         +col-one-third()
-        +col-one-third()
-        +col-one-third()
-
-    +row()
-        +col-one-third()
+            strong.text Paquete:
         +col-two-thirds()
+            p.text.margin0 !{echo("namePackage")}
 
-    +if("true")
-        p Nombre del paquete: !{echo("namePackage")}
-        p Duración: {{=duration}}
-        p Modelo de Ficha: {{=sheetModel}}
-        p Avisos Impresos: {{=printedNews}}
+    +row()
+        +col-one-third()
+            strong.text Duración:
+        +col-two-thirds()
+            p.text.margin0 {{=duration}}
 
-        +if("onlineShop != ''")
-            +js.
-                onlineShop = onlineShop + " ->lala--"
-            p Tienda Virtual: {{=onlineShop}}
+    +row()
+        +col-one-third()
+            strong.text Fichas Modelos 0KM:
+        +col-two-thirds()
+            p.text.margin0 {{=sheetModel}}
 
-        p Adicionales:
+    +row()
+        h2.subtitle Datos del paquete
+        +col-one-third()
+            strong.text Adicionales
+        +col-two-thirds()
             +for("var i = 0; i< additional.length; i++")
-                | {{=additional[i]}},
+                span.text.margin0 {{=additional[i]}},&nbsp;
+    +row()
+        +col-one-third()
+            strong.text Avisos Impresos:
+        +col-two-thirds()
+            p.text.margin0 {{=printedNews}}
+
+    +row()
+        a.btn(style="width: 200px" href="javascript:;") Ir a gestión de 0KM
+
+
+
+
+    //- +if("true")
+    //-     p Nombre del paquete: !{echo("namePackage")}
+    //-     p Duración: {{=duration}}
+    //-     p Modelo de Ficha: {{=sheetModel}}
+    //-     p Avisos Impresos: {{=printedNews}}
+
+    //-     +if("onlineShop != ''")
+    //-         +js.
+    //-             onlineShop = onlineShop + " ->lala--"
+    //-         p Tienda Virtual: {{=onlineShop}}
 

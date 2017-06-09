@@ -60,14 +60,19 @@
   table[class="body"] .hide-for-desktop
     display inherit !important
 
+  table[class="body"] .mobile-align-center
+    text-align center !important
+  table[class="body"] .mobile-align-left
+    text-align left !important
+  table[class="body"] .mobile-align-right
+    text-align right !important
+
   .mixed-two-up .col
     width 100% !important
 
-
-@media screen and (max-width: $emailWidth)
   div[class="col"]
     width: 100% !important
 
-  @media screen and (min-width: ($emailWidth + 1))
-    table[class="container"]
-      width: $emailWidth !important
+@media screen and (min-width: ($emailWidth + 1))
+  table[class="container"]
+    width $emailWidth !important
