@@ -21,3 +21,18 @@ block content
         +col-one-third()
         +col-two-thirds()
 
+    +if("true")
+        p Nombre del paquete: !{echo("namePackage")}
+        p Duración: {{=duration}}
+        p Modelo de Ficha: {{=sheetModel}}
+        p Avisos Impresos: {{=printedNews}}
+
+        +if("onlineShop != ''")
+            +js.
+                onlineShop = onlineShop + " ->lala"
+            p Tienda Virtual: {{=onlineShop}}
+
+        p Adicionales:
+            +for("var i = 0; i< additional.length; i++")
+                | {{=additional[i]}}, 
+
