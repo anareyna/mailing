@@ -27,7 +27,7 @@ mixin row()
                         tbody
                             tr(style='vertical-align: top')
                                 td(style='word-break: break-word;border-collapse: collapse !important;vertical-align: top', width='100%')
-                                    table.block-grid.two-up(cellpadding='0', cellspacing='0', width='100%')
+                                    table.block-grid(cellpadding='0', cellspacing='0', width='100%')
                                         tbody
                                             // FILA
                                             tr(style='vertical-align: top')
@@ -53,12 +53,12 @@ mixin col-one-half()
         table(style='border-spacing: 0;border-collapse: collapse;vertical-align: top', cellpadding='0', cellspacing='0', align='center', width='100%', border='0')&attributes(attributes)
             tbody
                 tr(style='vertical-align: top')
-                    td(style='word-break: break-word;border-collapse: collapse !important;vertical-align: top;background-color: transparent;padding-top: 5px;padding-right: 0px;padding-bottom: 5px;padding-left: 0px;border-top: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-left: 0px solid transparent; font-size: 16px;')
+                    td(style='word-break: break-word;border-collapse: collapse !important;vertical-align: top;background-color: transparent;border-top: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-left: 0px solid transparent; font-size: 16px;')
 
                         block
 
 
-                        a(href='', style='display:block;text-decoration:none;border:none;')
+                        //- a(href='', style='display:block;text-decoration:none;border:none;')
                             table(style='border-spacing: 0;border-collapse: collapse;vertical-align: top', cellpadding='0', cellspacing='0', width='100%', border='0')
                                 tbody
                                     tr(style='vertical-align: top')
@@ -153,7 +153,7 @@ mixin col-two-thirds()
                         block
 
 
-                        a(href='', style='display:block;text-decoration:none;border:none;')
+                        //- a(href='', style='display:block;text-decoration:none;border:none;')
                             table(style='border-spacing: 0;border-collapse: collapse;vertical-align: top', cellpadding='0', cellspacing='0', width='100%', border='0')
                                 tbody
                                     tr(style='vertical-align: top')
