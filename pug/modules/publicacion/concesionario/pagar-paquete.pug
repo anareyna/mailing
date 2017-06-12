@@ -8,7 +8,7 @@ block content
         +col-one-half()
             img(src="http://cds.neoauto.g3c.pe/neoauto3/img/neoauto.png" width="207")
         +col-one-half()
-            h2.text.fs20.align-center.fw-normal(style="padding-top: 10px") Confirmación de Compra
+            h2.text.fs20.align-center.fw-normal(style="padding-top: 10px") Confirmación de Compra4
 
     +row()
         +col-full()
@@ -48,27 +48,37 @@ block content
             p.text.margin0 {{=printedNews}}
 
     +row()
-        a.btn(style="width: 200px" href="javascript:;") Ir a gestión de 0KM
+        +col-full()
 
-        +if("onlineShop != ''")
-            +js.
-                onlineShop = onlineShop + " ->lala--"
-            p Tienda Virtual: {{=onlineShop}}
+            tr(align='center')
+                td
+                    a.btn(href='http://ofertop.pe') col-full tr 2
+
+            //- table(style='border-spacing: 0;border-collapse: collapse;vertical-align: top', cellpadding='0', cellspacing='0', width='100%', border='0')
+            //-     tbody
+            //-         tr(style='vertical-align: top')
+            //-             td
+            //-                 a.btn(style="width: 200px" href="javascript:;") Ir a gestión de 0KM---4
+
+    //- +if("onlineShop != ''")
+    //-     +js.
+    //-         onlineShop = onlineShop + " ->lala--"
+    //-     p Tienda Virtual: {{=onlineShop}}
 
 
 
-    +if("true")
-        p Nombre del paquete: !{echo("namePackage")}
-        p Duración: {{=duration}}
-        p Modelo de Ficha: {{=sheetModel}}
-        +js.
-            printedNews = printedNews + " ->lala--"
-        p Avisos Impresos: {{=printedNews}}
+    //- +if("true")
+    //-     p Nombre del paquete: !{echo("namePackage")}
+    //-     p Duración: {{=duration}}
+    //-     p Modelo de Ficha: {{=sheetModel}}
+    //-     +js.
+    //-         printedNews = printedNews + " ->lala--"
+    //-     p Avisos Impresos: {{=printedNews}}
 
-        +if("onlineShop != ''")
-            p Tienda Virtual: {{=onlineShop}}
+    //-     +if("onlineShop != ''")
+    //-         p Tienda Virtual: {{=onlineShop}}
 
-        p Adicionales:
-            +for("var i = 0; i< additional.length; i++")
-                | {{=additional[i]}}, 
+    //-     p Adicionales:
+    //-         +for("var i = 0; i< additional.length; i++")
+    //-             | {{=additional[i]}},
 
