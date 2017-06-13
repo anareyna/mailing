@@ -7,13 +7,16 @@ mixin ie(condition, content)
 
 
 mixin body()
+    // BODY START
     table.body(style='border-spacing: 0;border-collapse: collapse;vertical-align: top;height: 100%;width: 100%;table-layout: fixed', cellpadding='0', cellspacing='0', width='100%', border='0')&attributes(attributes)
         tbody
             tr(style='vertical-align: top')
                 td(style='word-break: break-word;border-collapse: collapse !important;vertical-align: top;background-color: #FFFFFF', valign='top')
                     block
+    // BODY END
 
 mixin row()
+    // ROW START
     table.body-bg-color(style='border-spacing: 0;border-collapse: collapse;vertical-align: top;', cellpadding='0', cellspacing='0', width='100%', border='0')&attributes(attributes)
         tbody
             tr(style='vertical-align: top')
@@ -40,10 +43,10 @@ mixin row()
                         | </td></tr></table>
                     +ie('if (IE)')
                         | </td></tr></table>
-
+    // ROW END
 
 mixin col-one-half()
-
+    // HALF START
     +ie('if (gte mso 9)|(IE)')
         | <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0"><tr>
     +ie('if (gte mso 9)|(IE)')
@@ -61,9 +64,10 @@ mixin col-one-half()
         | </td>
     +ie('if (gte mso 9)|(IE)')
         | </td></tr></table>
+    // HALF END
 
 mixin col-one-third()
-
+    // ONE THIRD START
     +ie('if (gte mso 9)|(IE)')
         | <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0"><tr>
     +ie('if (gte mso 9)|(IE)')
@@ -81,9 +85,11 @@ mixin col-one-third()
         | </td>
     +ie('if (gte mso 9)|(IE)')
         | </td></tr></table>
+    // ONE THIRD END
 
 
 mixin col-two-thirds()
+    // TWO THIRDS START
 
     +ie('if (gte mso 9)|(IE)')
         | <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0"><tr>
@@ -102,8 +108,10 @@ mixin col-two-thirds()
         | </td>
     +ie('if (gte mso 9)|(IE)')
         | </td></tr></table>
+    // TWO THIRDS END
 
 mixin col-full()
+    // FULL START
 
     +ie('if (gte mso 9)|(IE)')
         | <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0"><tr>
@@ -126,3 +134,5 @@ mixin col-full()
         | </td>
     +ie('if (gte mso 9)|(IE)')
         | </td></tr></table>
+    // FULL END
+
