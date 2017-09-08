@@ -5,12 +5,6 @@ block styles
 
 block content
     +row()
-        +col-one-half()
-            img(src="http://cds.neoauto.g3c.pe/neoauto3/img/neoauto.png" width="207")
-        +col-one-half()
-            h2.text.fs20.align-center.fw-normal(style="padding-top: 10px") Confirmación de Compra4
-
-    +row()
         +col-full()
             p.text Estimado&nbsp;
                 strong Mitsui
@@ -49,10 +43,11 @@ block content
 
     +row()
         +col-full()
-
-            tr(align='center')
-                td
-                    a.btn(href='http://ofertop.pe') col-full tr 2
+            table(style='border-spacing: 0;border-collapse: collapse;vertical-align: top;', cellpadding='0', cellspacing='0', width='100%', border='0')
+                tbody
+                    tr(align='center')
+                        td
+                            a.btn(href='http://neoauto.com', style="width: 200px") col-full tr 444
 
             //- table(style='border-spacing: 0;border-collapse: collapse;vertical-align: top', cellpadding='0', cellspacing='0', width='100%', border='0')
             //-     tbody
