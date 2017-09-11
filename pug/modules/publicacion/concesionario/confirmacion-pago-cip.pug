@@ -13,72 +13,83 @@ block content
                 strong.brand-color Paquete !{echo("namePackage")}
 
     +row()
-        h2.subtitle.fw-bold Datos del paquete
-
-    +row()
-        +col-one-third()
-            strong.text Paquete:
-        +col-two-thirds()
-            p.text.margin0 !{echo("namePackage")}
-
-    +row()
-        +col-one-third()
-            strong.text Duración:
-        +col-two-thirds()
-            p.text.margin0 {{=duration}}
-
-    +row()
-        +col-one-third()
-            strong.text Fichas Modelos 0KM:
-        +col-two-thirds()
-            p.text.margin0 {{=sheetModel}}
-
-    +row()
-        +col-one-third()
-            strong.text Avisos Impresos:
-        +col-two-thirds()
-            p.text.margin0 {{=printedNews}}
-    
-    +row()
-        +col-one-third()
-            strong.text Tienda virtual:
-        +col-two-thirds()
-            p.text.margin0 Incluido
-
-    +row()
-        +col-one-third()
-            strong.text Adicionales
-        +col-two-thirds()
-            +for("var i = 0; i< additional.length; i++")
-                span.text.margin0 {{=additional[i]}},&nbsp;
-
-    +row()
-        h2.subtitle.fw-bold Datos de transacción
-
-    +row()
-        +col-one-third()
-            strong.text Medio de pago:
-        +col-two-thirds()
-            p.text.margin0 PagoEfectivo 
-    +row()
-        +col-one-third()
-            strong.text Código CIP:
-        +col-two-thirds()
-            p.text.margin0 12323434546
-    +row()
-        +col-one-third()
-            strong.text Monto de transacción:
-        +col-two-thirds()
-            p.text.margin0 S/ 2500
-    +row()
-        +col-one-third()
-            strong.text Fecha de transacción:
-        +col-two-thirds()
-            p.text.margin0 24/04/2017 | 12:25 hrs  
-    
+        +col-full()
+            h2.subtitle.fw-bold Datos del paquete
 
     +row()
         +col-full()
+            +col-one-third()
+                strong.text Paquete:
+            +col-two-thirds()
+                p.text.margin0 !{echo("namePackage")}
+
+    +row()
+        +col-full()
+            +col-one-third()
+                strong.text Duración:
+            +col-two-thirds()
+                p.text.margin0 {{=duration}}
+
+    +row()
+        +col-full()
+            +col-one-third()
+                strong.text Fichas Modelos 0KM:
+            +col-two-thirds()
+                p.text.margin0 {{=sheetModel}}
+
+    +row()
+        +col-full()
+            +col-one-third()
+                strong.text Avisos Impresos:
+            +col-two-thirds()
+                p.text.margin0 {{=printedNews}}
+    
+    +row()
+        +col-full()
+            +col-one-third()
+                strong.text Tienda virtual:
+            +col-two-thirds()
+                p.text.margin0 Incluido
+
+    +row()
+        +col-full()
+            +col-one-third()
+                strong.text Adicionales
+            +col-two-thirds()
+                +for("var i = 0; i< additional.length; i++")
+                    span.text.margin0 {{=additional[i]}},&nbsp;
+
+    +row()
+        +col-full()
+            h2.subtitle.fw-bold Datos de transacción
+
+    +row()
+        +col-full()
+            +col-one-third()
+                strong.text Medio de pago:
+            +col-two-thirds()
+                p.text.margin0 PagoEfectivo 
+    +row()
+        +col-full()
+            +col-one-third()
+                strong.text Código CIP:
+            +col-two-thirds()
+                p.text.margin0 12323434546
+    +row()
+        +col-full()
+            +col-one-third()
+                strong.text Monto de transacción:
+            +col-two-thirds()
+                p.text.margin0 S/ 2500
+    +row()
+        +col-full()
+            +col-one-third()
+                strong.text Fecha de transacción:
+            +col-two-thirds()
+                p.text.margin0 24/04/2017 | 12:25 hrs  
+    
+    +row()
+        +col-full()        
             table(style='border-spacing: 0;border-collapse: collapse;vertical-align: top;', cellpadding='0', cellspacing='0', width='100%', border='0')
                 tbody
                     tr(align='center')
@@ -89,6 +100,6 @@ block content
             small.text.fs14.mb20.block.lh20
                 strong Nota:&nbsp;
                 | En algunos casos el sistema puede tener una pequeña demora de 10min aproximadamente para la actualización de la información.
-  
+
   
 

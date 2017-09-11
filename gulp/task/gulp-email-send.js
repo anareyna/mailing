@@ -30,7 +30,8 @@ var config = {
     ],
     ani : [
       'areynaw@gmail.com',
-      'ana.reyna@orbis.com.pe'
+      'ana.reyna@orbis.com.pe',
+      'devneoauto3@gmail.com'
     ]
   },
   userActive : require("os").userInfo().username
