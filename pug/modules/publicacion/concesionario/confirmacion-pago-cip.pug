@@ -1,5 +1,8 @@
 extends /pug/layout/all/layout.pug
 
+block title
+    - var headerTitle = "Confirmación de compra"
+
 block styles
     link(href=`${config.static_url}css/modules/publicacion/concesionario/confirmacion-pago-cip.css` media="all" rel="stylesheet" type="text/css")
 
