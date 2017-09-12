@@ -2,6 +2,7 @@
   table[class="body"] img {
     height: auto !important;
     width: 100% !important;
+    text-align: left !important;
   }
   table[class="body"] img.fullwidth {
     max-width: 100% !important;
