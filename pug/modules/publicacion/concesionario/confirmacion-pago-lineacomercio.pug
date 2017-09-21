@@ -3,17 +3,14 @@ extends /pug/layout/all/layout.pug
 block title
     - var headerTitle = "Confirmación de compra"
 
-block styles
-    link(href=`${config.static_url}css/modules/publicacion/concesionario/confirmacion-pago-cip.css` media="all" rel="stylesheet" type="text/css")
-
 block content
     +row()
         +col-full()
             p.text Estimado&nbsp;
-                strong !{echo("name")}
+                strong {{=name}}
             p.pb10.margin0
             p.text ¡Felicitaciones!. Se ha registrado con éxito el pago de su&nbsp;
-                strong.brand-color Paquete {{=packageName}}
+                strong.brand-color Paquete !{echo("packageName")}
 
     +row()
         +col-full()
@@ -54,6 +51,7 @@ block content
             +col-two-thirds()
                 p.text.margin0 {{=onlineShop}}
 
+
     +row()
         +col-full()
             +col-one-third()
@@ -63,7 +61,6 @@ block content
                     span.text.margin0 {{=additional[i]}}
                     +if("i !== additional.length - 1")
                         | ,&nbsp;
-
     +row()
         +col-full()
             h2.subtitle.fw-bold Datos de transacción
@@ -77,15 +74,23 @@ block content
     +row()
         +col-full()
             +col-one-third()
-                strong.text Código CIP:
+                strong.text Monto de paquete:
             +col-two-thirds()
-                p.text.margin0 {{=paymentCode}}
+                p.text.margin0 S/ {{=paymentAmount}}
+    +row()
+        +col-full()
+            +col-one-third()
+                strong.text Recargo financiero:
+            +col-two-thirds()
+                p.text.margin0 S/ {{=paymentFee}}
+
     +row()
         +col-full()
             +col-one-third()
                 strong.text Monto de transacción:
             +col-two-thirds()
-                p.text.margin0 S/ {{=paymentAmount}}
+                p.text.margin0 S/ {{=paymentTotal}}
+
     +row()
         +col-full()
             +col-one-third()
@@ -102,7 +107,7 @@ block content
         +col-full()
             small.text.fs14.mb20.block.lh20
                 strong Nota:&nbsp;
-                | En algunos casos el sistema puede tener una pequeña demora de 10min aproximadamente para la actualización de la información.
+                | En algunos casos el sistema puede tener una ligera demora de 10min aproximadamente para la actualización de la información.
 
 
 

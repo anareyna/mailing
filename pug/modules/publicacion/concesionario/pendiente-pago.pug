@@ -1,0 +1,149 @@
+extends /pug/layout/all/layout.pug
+
+block title
+    - var headerTitle = "Pago pendiente"
+
+block content
+    +row()
+        +col-full()
+            p.text Estimado&nbsp;
+                strong !{echo("name")}
+
+            p.text Le recordamos que su&nbsp;
+                strong.brand-color Paquete !{echo("packageName")} S/!{echo("paymentAmount")}&nbsp;
+                | se encuentra Pendiente de pago en Neoauto.com. Estos son los datos:
+
+    +row()
+        +col-full()
+            .block.pt20.pb20(style="background-color: #f4f5f6")
+                table(style="border-spacing: 0; border-collapse: collapse;vertical-align: top; height: 100%; width: 100%;" cellpadding="0" cellspacing="0" width="100%" border="0")
+                    tbody
+                        tr
+                            td(align="right", width="40%" valign="top")
+                                img(src="https://i.imgur.com/3q5VuuC.png" width="70" style="margin-right: 15px;")
+                            td(width="60%")
+                                p.text.mt0.mb0
+                                    strong Código CIP:&nbsp;
+                                    | {{=paymentCode}}
+                                p.text.mt0.mb0
+                                    strong Total a pagar:&nbsp;
+                                    | S/ {{=paymentAmount}}
+                                p.text.mt0.mb20
+                                    strong Pagar antes de:&nbsp;
+                                    |{{=paymentExpireDate}}
+
+                +btn("Pagar")(href="{{=paymentLink}}", style="padding-left: 70px; padding-right: 70px;")
+
+    +row()
+        +col-full()
+            p.text Recuerda realizar el pago a la empresa PagoEfectivo con tu código CIP a través de tu Banca por internet o en agentes autorizados y agencias a nivel nacional.
+            center
+                a.link.link-blue.decoration.pb10(href="http://neoauto.pe", target="_blank")
+                    strong Ver instrucciones de pago
+                p.text Centros de pago: Interbank, BCP, BBVA Continental, Scotiabank, Western Union, Agente Kasnet, Global Net y Full Carga.
+
+    +row()
+        +col-full()
+            h2.text.mb0 Datos del paquete:
+
+    +row()
+        +col-full()
+            +col-one-third()
+                strong.text Paquete:
+            +col-two-thirds()
+                p.text.margin0 !{echo("packageName")}
+
+    +row()
+        +col-full()
+            +col-one-third()
+                strong.text Duración:
+            +col-two-thirds()
+                p.text.margin0 {{=packageDuration}}
+
+    +row()
+        +col-full()
+            +col-one-third()
+                strong.text Fichas Modelos 0KM:
+            +col-two-thirds()
+                p.text.margin0 {{=sheetModel}}
+
+    +row()
+        +col-full()
+            +col-one-third()
+                strong.text Avisos Impresos:
+            +col-two-thirds()
+                p.text.margin0 {{=printedAds}}
+
+    +row()
+        +col-full()
+            +col-one-third()
+                strong.text Tienda virtual:
+            +col-two-thirds()
+                p.text.margin0 {{=onlineShop}}
+
+
+    +row()
+        +col-full()
+            +col-one-third()
+                strong.text Adicionales
+            +col-two-thirds()
+                +for("var i = 0; i < additional.length; i++")
+                    span.text.margin0 {{=additional[i]}}
+                    +if("i !== additional.length - 1")
+                        | ,&nbsp;
+
+
+
+    +row()
+        +col-full()
+            h2.text.mb0 Datos del cliente:
+
+    +row()
+        +col-full()
+            +col-one-third()
+                strong.text RUC:
+            +col-two-thirds()
+                p.text.margin0 {{=ruc}}
+
+    +row()
+        +col-full()
+            +col-one-third()
+                strong.text Razón social:
+            +col-two-thirds()
+                p.text.margin0 {{=companyName}}
+
+    +row()
+        +col-full()
+            +col-one-third()
+                strong.text Dirección:
+            +col-two-thirds()
+                p.text.margin0 {{=address}}
+
+    +row()
+        +col-full()
+            +col-one-third()
+                strong.text Teléfono:
+            +col-two-thirds()
+                p.text.margin0 {{=phone}}
+
+    +row()
+        +col-full()
+            +col-one-third()
+                strong.text Email:
+            +col-two-thirds()
+                p.text.margin0 {{=email}}
+    +row()
+        +col-full()
+            br
+
+
+
+
+
+
+
+
+
+
+
+

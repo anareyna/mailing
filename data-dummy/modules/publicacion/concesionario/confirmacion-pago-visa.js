@@ -17,7 +17,7 @@ module.exports = {
     ],
 
     paymentMethod: "PagoEfectivo",
-    paymentCode: "345434354",
-    paymentAmount: "2500",
+    paymentCode: "fdge56",
+    paymentAmount: 2500,
     paymentDate: "24/04/2017 | 12:25 hrs",
 }

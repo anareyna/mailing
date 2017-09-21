@@ -16,8 +16,9 @@ module.exports = {
         "Destaque de concesionario",
     ],
 
-    paymentMethod: "PagoEfectivo",
-    paymentCode: "345434354",
-    paymentAmount: "2500",
+    paymentMethod: "Crédito El Comercio",
+    paymentAmount: 2500,
+    paymentFee: 125,
+    paymentTotal: 2650,
     paymentDate: "24/04/2017 | 12:25 hrs",
 }

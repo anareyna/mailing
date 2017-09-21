@@ -1,0 +1,61 @@
+extends /pug/layout/all/layout.pug
+
+block title
+    - var headerTitle = "Aviso impreso"
+
+block styles
+    link(href=`${config.static_url}css/modules/publicacion/concesionario/confirmacion-pago-cip.css` media="all" rel="stylesheet" type="text/css")
+
+block content
+    +row()
+        +col-full()
+            p.text Estimado&nbsp;
+                strong Mitsui
+            p.pb10.margin0
+            p.text.pb20(style="border-bottom: 1px solid #ccc;") Se ha registrado con éxito los datos de la publicación de su aviso impreso.
+
+    +row()
+        +col-full()
+            +col-one-third()
+                strong.text Fecha de publicación:
+            +col-two-thirds()
+                p.text.margin0 Domingo 28 de abril del 2017
+
+    +row()
+        +col-full()
+            +col-one-third()
+                strong.text Fecha de registro:
+            +col-two-thirds()
+                p.text.margin0 Domingo 28 de abril del 2017 | 10:04 hrs
+    +row()
+        +col-full()
+            h2.subtitle.fw-bold.pt10.mb0 Datos del aviso impreso
+
+            table(style="border-spacing: 0; border-collapse: collapse;vertical-align: top; height: 100%; width: 100%;" cellpadding="10" cellspacing="0" width="100%" border="0")
+                    thead(style="border-bottom: 1px solid #ccc")
+                        tr
+                            td
+                                strong.text Marca
+                            td
+                                strong.text Medio Impreso
+                            td
+                                strong.text Código
+                    tbody
+                            tr
+                                td.text Toyota Corolla
+                                td.text Neoauto El Comercio y Trome
+                                td.text 4gdfg64
+                            tr
+                                td.text Toyota Corolla
+                                td.text Neoauto El Comercio y Trome
+                                td.text 4gdfg64
+
+    +row()
+        +col-full()
+            br
+            br
+            br
+
+
+
+

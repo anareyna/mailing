@@ -10,53 +10,53 @@ block content
     +row()
         +col-full()
             p.text Hola&nbsp;
-                strong Mitsui Toyota
+                strong {{=name}}
             p.text Uno de sus vehículos tiene un interesado, estos son los datos:
 
     +row()
         +col-full()
             .block.pt20.pb20(style="background-color: #f4f5f6")
                 table(style="border-spacing: 0; border-collapse: collapse;vertical-align: top; height: 100%; width: 100%;" cellpadding="0" cellspacing="0" width="100%" border="0")
-                    tr 
-                        td(align="right") 
+                    tr
+                        td(align="right")
                             a.link(href="http://neoauto.pe" target="_blank")
-                                img(src="http://cde.3.neoauto.com/blog/302x192/59adf36022b36.jpg" width="160" style="border: 1px solid #dfe0e1")
+                                img(src="{{=vehicleImg}}" width="160" style="border: 1px solid #dfe0e1")
                         td(width="20") &nbsp;
                         td
-                            a.link.link-blue.decoration.fs18.block.pt10(href="http://neoauto.pe") Toyota Corolla 2017
-                            p.margin0.mb20.text.fs22 US$114,000
-                            small.text.fs14 Código aviso: 34h355
-   
-    +row()    
+                            a.link.link-blue.decoration.fs18.block.pt10(href="http://neoauto.pe") {{=vehicleName}}
+                            p.margin0.mb20.text.fs22 {{=vehiclePrice}}
+                            small.text.fs14 Código aviso: {{=vehicleCode}}
+
+    +row()
         +col-full()
-            h4.text.align-center Datos del interesado   
+            h4.text.align-center Datos del interesado
             table(style="border-spacing: 0; border-collapse: collapse; vertical-align: top; height: 100%;width: 100%; table-layout: fixed;" cellpadding="0" cellspacing="0" width="100%" border="0")
-                tr 
+                tr
                     td.pb5(width="30")
                         img(src="https://i.imgur.com/wL2bKPr.jpg" width="22")
                     td.pb5
                         b.text Contacto:&nbsp;
-                        span.text Arturo Romero
+                        span.text {{=interestedContact}}
                 tr(style="padding-bottom:30px; line-height: 40px")
                     td.pb5(width="30")
                         img(src="https://i.imgur.com/8z5Em1U.jpg" width="22")
                     td.pb5
                         b.text Teléfono:&nbsp;
-                        span.text 92834245
-                tr 
+                        span.text {{=interestedPhone}}
+                tr
                     td.pb5(width="30")
                         img(src="https://i.imgur.com/gw8HKma.jpg" width="22")
                     td.pb5
                         b.text Email:&nbsp;
-                        span.text.text-color email@sdfsd.com
-                tr 
+                        span.text.text-color {{=interestedEmail}}
+                tr
                     td.pb5(width="30" valign="top")
                         img(src="https://i.imgur.com/jcksezN.jpg" width="22")
                     td.pb5
                         b.text Mensaje:&nbsp;
-                        span.text Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos quia error dolorem nisi expedita, sequi necessitatibus odit ex, aliquid optio et facilis obcaecati
+                        span.text {{=interestedMessage}}
             h4.text.align-center ¡Contáctate con el interesado y concreta tu venta YA!
 
-  
-  
+
+
 

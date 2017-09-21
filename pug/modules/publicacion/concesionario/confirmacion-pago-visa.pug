@@ -13,7 +13,7 @@ block content
                 strong !{echo("name")}
             p.pb10.margin0
             p.text ¡Felicitaciones!. Se ha registrado con éxito el pago de su&nbsp;
-                strong.brand-color Paquete {{=packageName}}
+                strong.brand-color Paquete !{echo("packageName")}
 
     +row()
         +col-full()
@@ -77,7 +77,7 @@ block content
     +row()
         +col-full()
             +col-one-third()
-                strong.text Código CIP:
+                strong.text Código de transacción:
             +col-two-thirds()
                 p.text.margin0 {{=paymentCode}}
     +row()
@@ -98,6 +98,7 @@ block content
             br
             +btn("Ir a gestión de 0Km")(href="http://neoauto.com")
             br
+
     +row()
         +col-full()
             small.text.fs14.mb20.block.lh20

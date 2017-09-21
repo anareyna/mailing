@@ -1,0 +1,88 @@
+extends /pug/layout/all/layout.pug
+
+block title
+    - var headerTitle = "Paquete por vencer"
+
+block content
+    +row()
+        +col-full()
+            p.text Estimado&nbsp;
+                strong Mitsui
+            p.pb10.margin0
+            p.text Le informamos que su&nbsp;
+                strong Paquete !{echo("namePackage")} finalizará el 25/04/2017
+
+    +row()
+        +col-full()
+            h2.subtitle.fw-bold Datos del paquete
+
+    +row()
+        +col-full()
+            +col-one-third()
+                strong.text Paquete:
+            +col-two-thirds()
+                p.text.margin0 !{echo("namePackage")}
+
+    +row()
+        +col-full()
+            +col-one-third()
+                strong.text Duración:
+            +col-two-thirds()
+                p.text.margin0 {{=duration}}
+
+    +row()
+        +col-full()
+            +col-one-third()
+                strong.text Fichas Modelos 0KM:
+            +col-two-thirds()
+                p.text.margin0 {{=sheetModel}}
+
+    +row()
+        +col-full()
+            +col-one-third()
+                strong.text Avisos Impresos:
+            +col-two-thirds()
+                p.text.margin0 {{=printedNews}}
+
+    +row()
+        +col-full()
+            +col-one-third()
+                strong.text Tienda virtual:
+            +col-two-thirds()
+                p.text.margin0 Incluido
+
+    +row()
+        +col-full()
+            +col-one-third()
+                strong.text Adicionales:
+            +col-two-thirds()
+                +for("var i = 0; i< additional.length; i++")
+                    span.text.margin0 {{=additional[i]}},&nbsp;
+
+    +row()
+        +col-full()
+            +col-one-third()
+                strong.text Fecha de activación:
+            +col-two-thirds()
+                p.text.margin0 20/2/2017
+
+    +row()
+        +col-full()
+            +col-one-third()
+                strong.text Fecha de caducidad:
+            +col-two-thirds()
+                p.text.margin0 24/04/2017
+
+    +row()
+        +col-full()
+            +col-one-third()
+                strong.text Código de transacción:
+            +col-two-thirds()
+                p.text.margin0 287333
+
+    +row()
+        +col-full()
+            p.align-center.text.pb20 Renueva tu paquete e incrementa tus ventas
+            +btn("Renovar paquete")(href="http://neoauto.com")
+            .pb20
+            .pb20
