@@ -10,7 +10,7 @@ block content
     +row()
         +col-full()
             p.text Estimado&nbsp;
-                strong Mitsui
+                strong !{echo("name")}
             p.pb10.margin0
             p.text.pb20(style="border-bottom: 1px solid #ccc;") Se ha registrado con éxito los datos de la publicación de su aviso impreso.
 
@@ -19,14 +19,14 @@ block content
             +col-one-third()
                 strong.text Fecha de publicación:
             +col-two-thirds()
-                p.text.margin0 Domingo 28 de abril del 2017
+                p.text.margin0  {{=publishDate}}
 
     +row()
         +col-full()
             +col-one-third()
                 strong.text Fecha de registro:
             +col-two-thirds()
-                p.text.margin0 Domingo 28 de abril del 2017 | 10:04 hrs
+                p.text.margin0  {{=registerDate}}
     +row()
         +col-full()
             h2.subtitle.fw-bold.pt10.mb0 Datos del aviso impreso
@@ -41,14 +41,11 @@ block content
                             td
                                 strong.text Código
                     tbody
+                        +for("var i = 0; i < printedAds.length; i++")
                             tr
-                                td.text Toyota Corolla
-                                td.text Neoauto El Comercio y Trome
-                                td.text 4gdfg64
-                            tr
-                                td.text Toyota Corolla
-                                td.text Neoauto El Comercio y Trome
-                                td.text 4gdfg64
+                                td.text {{=printedAds[i].brand}}
+                                td.text {{=printedAds[i].medium}}
+                                td.text {{=printedAds[i].code}}
 
     +row()
         +col-full()

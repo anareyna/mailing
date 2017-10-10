@@ -2,16 +2,11 @@ var faker = require("faker")
 var fn = require(process.cwd() + "/data-dummy/functions")
 
 module.exports = {
-    namePackage: ["Premium", "Destacado", "Simple"][fn.randomNumberMinMax(0, 2)],
-    duration: fn.randomNumberMinMax(1, 30) + " días",
-    sheetModel: "Ilimitado",
-    printedNews: faker.random.number(),
-    onlineShop: ["Incluido", ""][fn.randomNumberMinMax(0, 1)],
-    additional: [
-        "Texto Promocional",
-        "Destaque en ficha 0KM",
-        "2 post en facebook",
-        "2 notas en el blog",
-        "Destaque de concesionario.",
-    ]
+    name: "Mitsui",
+    publishDate: "Domingo 29 de abril del 2017",
+    registerDate: "Domingo 29 de abril del 2017 | 10:04 hrs",
+    printedAds: [
+        { "brand": "Toyota Corolla", "medium": "Neoauto El Comercio y Trome", "code": "4gdfg65" },
+        { "brand": "Nissan Sentra", "medium": "El Comercio y Trome", "code": "gdfg65" }
+    ],
 }

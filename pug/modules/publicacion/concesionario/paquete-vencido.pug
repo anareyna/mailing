@@ -49,7 +49,7 @@ block content
             +col-one-third()
                 strong.text Tienda virtual:
             +col-two-thirds()
-                p.text.margin0 Incluido
+                p.text.margin0 {{=onlineShop}}
 
     +row()
         +col-full()
@@ -64,14 +64,14 @@ block content
             +col-one-third()
                 strong.text Fecha de activación:
             +col-two-thirds()
-                p.text.margin0 20/2/2017
+                p.text.margin0 {{=activationDate}}
 
     +row()
         +col-full()
             +col-one-third()
                 strong.text Fecha de caducidad:
             +col-two-thirds()
-                p.text.margin0 24/04/2017
+                p.text.margin0 {{=expirationDate}}
 
     +row()
         +col-full()
@@ -82,21 +82,21 @@ block content
             +col-one-third()
                 strong.text Tiempo Publicado:
             +col-two-thirds()
-                p.text.margin0 30 días
+                p.text.margin0 {{=publishedDays}}
 
     +row()
         +col-full()
             +col-one-third()
                 strong.text Lo han visto:
             +col-two-thirds()
-                p.text.margin0 120 personas
+                p.text.margin0 {{=viewNumber}} personas
 
     +row()
         +col-full()
             +col-one-third()
                 strong.text Contactos:
             +col-two-thirds()
-                p.text.margin0 182
+                p.text.margin0 {{=contactNumber}}
 
     +row()
         +col-full()

@@ -13,5 +13,10 @@ module.exports = {
         "2 post en facebook",
         "2 notas en el blog",
         "Destaque de concesionario.",
-    ]
+    ],
+    activationDate: "20/2/2017",
+    expirationDate: "24/04/2017",
+    publishedDays: fn.randomNumberMinMax(1, 30) + " días",
+    viewNumber: 120,
+    contactNumber: 182
 }
